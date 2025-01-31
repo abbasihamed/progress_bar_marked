@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:progress_bar_marked/marked_player_progressbar.dart';
+import 'package:progress_bar_marked/progress_bar_marked.dart';
 import 'package:video_player/video_player.dart';
 
 void main(List<String> args) {

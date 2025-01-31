@@ -1,7 +1,7 @@
 name: progress_bar_marked
 description: "This is a navigation bar where you can specify specific times in this navigation bar."
 version: 0.0.1
-homepage:
+homepage: https://github.com/abbasihamed/progress_bar_marked
 
 environment:
   sdk: ^3.6.1
