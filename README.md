@@ -11,29 +11,34 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Progress Bar Marked
 
-## Features
+This is a navigation bar where you can specify specific times in this navigation bar.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+![Alt Text](readme_file/sample.gif)
 
-## Getting started
+**You can use it for video and audio.**
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+# Example
 
 ```dart
-const like = 'sample';
+ProgressBarMarked(
+    activeColor: Colors.orange,
+    markColor: Colors.red,
+    thumbColor: Colors.orangeAccent,
+    strokeHeight: 10,
+    duration: _controller.value.duration,
+    position: _controller.value.position,
+    markers: [
+        Duration(seconds: 1),
+        Duration(seconds: 2),
+        Duration(seconds: 15),
+    ],
+    onUpdate: (duration) {
+        _controller.seekTo(duration);
+        setState(() {});
+    },
+    onUpdateStart: () {},
+    onUpdateEnd: () {},
+),
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
