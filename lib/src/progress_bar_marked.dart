@@ -3,25 +3,19 @@ import 'package:flutter/material.dart';
 part 'paint_progress_bar.dart';
 
 class ProgressBarMarked extends StatelessWidget {
+  /// Creating [progressBars] for video and audio and the ability to show specific positions in the progress bar.
+  ///
+  /// [position] and [duration] must be given a value.
+
   final Duration position;
   final Duration duration;
   final List<Duration> markers;
-  final Function(Duration duration)? onUpdate;
-  final VoidCallback? onUpdateStart;
-  final VoidCallback? onUpdateEnd;
-  final double strokeHeight;
-  final Color deactiveColor;
-  final Color activeColor;
-  final Color markColor;
-  final double thumbRadius;
-  final Color thumbColor;
-  final Color shadowColor;
-  final double shadowBlur;
+
   const ProgressBarMarked({
     super.key,
     required this.duration,
     required this.position,
-    required this.markers,
+    this.markers = const <Duration>[],
     this.onUpdate,
     this.onUpdateStart,
     this.onUpdateEnd,
@@ -34,6 +28,23 @@ class ProgressBarMarked extends StatelessWidget {
     this.shadowBlur = 3,
     this.shadowColor = Colors.grey,
   });
+
+  /// It will return you the updated [Duration] every time you update the progress bar.
+  final Function(Duration duration)? onUpdate;
+
+  /// Specifies the start of the [update]
+  final VoidCallback? onUpdateStart;
+
+  /// Indicates the end of the [update]
+  final VoidCallback? onUpdateEnd;
+  final double strokeHeight;
+  final Color deactiveColor;
+  final Color activeColor;
+  final Color markColor;
+  final double thumbRadius;
+  final Color thumbColor;
+  final Color shadowColor;
+  final double shadowBlur;
 
   @override
   Widget build(BuildContext context) {
